@@ -1,0 +1,66 @@
+#+title: The CAPM
+#+author: Matt Brigida, Ph.D.
+#+STARTUP: hideblocks
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
+
+* 5MF Presentations
+
+https://www.5minutefinance.org/concepts/the-capital-asset-pricing-model
+
+https://www.5minutefinance.org/concepts/mean-variance-portfolio-optimization
+
+* Overview
+
+- We know how to calculate cash flows and move them around in time given a discount rate.  We also know where to apply these tools---to stock and bond valuation, investment decision rules, etc.  The last step is to figure out how to get the discount rate.  The CAPM will help us do this.
+- The CAPM will allow us to /understand what we mean by risk/.  
+- The CAPM result: *you are not paid for taking unnecessary risks*.
+
+* Expected Return and Variance
+
+** Single Asset
+
+** Portfolio
+
+Say we have two stocks in our portfolio, 
+
+*** Optional:  Portfolio of Two Assets Video
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dpB5fx5lbA8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+*  The CAPM, A Short Version
+
+
+
+
+
+
+
+
+* Insights from the CAPM
+
+- A Risky Stock Can Make Your Portfolio Safer
+
+
+** The effect of correlation on portfolio risk
+
+<iframe src="https://micfm.shinyapps.io/The_CAPM_app1/" class="stretch" onLoad="iFrameResize();"></iframe>
+
+
+
+
+* Applied CAPM: Calculating Beta
+
+
+<iframe src="https://micfm.shinyapps.io/The_CAPM_app2/" class="stretch" onLoad="iFrameResize();"></iframe>
+
+
+* Optional: A CAPM video appropriate to an Intro to Finance Course 
+
+
+
+
+
+* Optional: A slightly more advanced treatment of the CAPM
+  
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/coJl_aCBTuA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
