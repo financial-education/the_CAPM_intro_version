@@ -66,19 +66,19 @@ We'll define $\beta_A$ as the amount of systematic risk in asset /A/ relative to
 
 Thus our =reward-per-unit-risk= (Reward to Risk Ratio) is:
 
-$$\frac{E(R_A) - r_f}{\Beta_A}$$
+$$\frac{E(R_A) - r_f}{\beta_A}$$
 
 ** The CAPM
 
 Via equilibrium argument:
 
-$$\frac{E(R_X) - r_f}{\Beta_X} = \frac{E(R_Y) - r_f}{\Beta_Y}$$
+$$\frac{E(R_X) - r_f}{\beta_X} = \frac{E(R_Y) - r_f}{\beta_Y}$$
 
 for all capital assets $X$ and $Y$.  
 
-Given the market portfolio is also a capital asset, and $\Beta_m = 1$, we have:
+Given the market portfolio is also a capital asset, and $\beta_m = 1$, we have:
 
-$$E(R_X) = r_f + \Beta_X(E(R_m) - r_f)$$
+$$E(R_X) = r_f + \beta_X(E(R_m) - r_f)$$
 
 for any capital asset $X$.
 
@@ -87,7 +87,7 @@ for any capital asset $X$.
 The expected return on any capital asset is a function of:
 
 - $r_f$ the risk free rate, which is *the pure time value of money*.
-- $\Beta_X$, the amount of systematic risk in the asset $X$.
+- $\beta_X$, the amount of systematic risk in the asset $X$.
 - $E(R_m) - r_f$, the *market risk premium*, which is the market-wide cost of bearing a unit of systematic risk.
 
 So you can read the CAPM as:
@@ -98,10 +98,10 @@ The expected return on any asset is equal to the pure time value of money plus t
 
 *** Stock with low correlations...
 
-Stock with low amount of systematic risk will have low beta coefficients ($\Beta_X = \frac{Cov(R_X, R_m)}{\sigma^2_m}$) and thus will have low expected returns.  That is, you only require low returns for assets that serve as a market hedge.  Remember:
+Stock with low amount of systematic risk will have low beta coefficients ($\beta_X = \frac{Cov(R_X, R_m)}{\sigma^2_m}$) and thus will have low expected returns.  That is, you only require low returns for assets that serve as a market hedge.  Remember:
 
 #+begin_quote
-An asset's risk is not its standard deviation, but in how much that asset increases your portfolio's standard deviation when it is added (which is the $\Beta$).
+An asset's risk is not its standard deviation, but in how much that asset increases your portfolio's standard deviation when it is added (which is the $\beta$).
 #+end_quote
 
 
@@ -125,8 +125,9 @@ An asset's risk is not its standard deviation, but in how much that asset increa
 
 * Applied CAPM: Calculating Beta
 
-
+#+BEGIN_EXPORT HTML
 <iframe src="https://micfm.shinyapps.io/The_CAPM_app2/" class="stretch" onLoad="iFrameResize();"></iframe>
+#+END_EXPORT
 
 
 * Optional: A CAPM video appropriate to an Intro to Finance Course 
