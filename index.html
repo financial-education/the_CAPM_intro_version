@@ -3,14 +3,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-05-28 Fri 22:16 -->
+<!-- 2022-02-14 Mon 18:30 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>The CAPM</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="Matt Brigida, Ph.D." />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -31,8 +31,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -41,21 +42,21 @@
   pre.src {
     position: relative;
     overflow: auto;
-    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
   pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -191,7 +192,6 @@
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
-  /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
@@ -199,28 +199,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
-</script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         displayAlign: "center",
@@ -241,70 +219,55 @@
              }
 });
 </script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 <h1 class="title">The CAPM</h1>
-<div id="table-of-contents">
+<div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org4afd896">1. 5MF Presentations</a></li>
-<li><a href="#org4861470">2. Overview</a></li>
-<li><a href="#orgb4084db">3. Expected Return and Variance</a>
+<li><a href="#orgeeaa8f6">1. Overview</a></li>
+<li><a href="#orgc0cff8f">2. Expected Return and Variance</a>
 <ul>
-<li><a href="#orgea33a96">3.1. Single Asset</a></li>
-<li><a href="#org1644ae7">3.2. Portfolio</a>
+<li><a href="#orge178448">2.1. Single Asset</a></li>
+<li><a href="#org4da6692">2.2. Portfolio</a>
 <ul>
-<li><a href="#orga056c07">3.2.1. Optional:  Portfolio of Two Assets Video</a></li>
+<li><a href="#org647f405">2.2.1. Optional:  Portfolio of Two Assets Video</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgec1cd92">4. The CAPM, A Short Version</a>
+<li><a href="#org78d0a4b">3. The CAPM, A Short Version</a>
 <ul>
-<li><a href="#org6f07fa4">4.1. Realized Returns</a></li>
-<li><a href="#orgda302b6">4.2. Systematic Risk Principle</a></li>
-<li><a href="#org64cd482">4.3. Define \(\beta\)</a></li>
-<li><a href="#org3e68f10">4.4. The Reward to Risk Ratio</a></li>
-<li><a href="#org1641b42">4.5. The CAPM</a>
+<li><a href="#org57750d1">3.1. Realized Returns</a></li>
+<li><a href="#orgaf4e5d3">3.2. Systematic Risk Principle</a></li>
+<li><a href="#org02336de">3.3. Define \(\beta\)</a></li>
+<li><a href="#orge06c695">3.4. The Reward to Risk Ratio</a></li>
+<li><a href="#org827a270">3.5. The CAPM</a>
 <ul>
-<li><a href="#org60e0a8b">4.5.1. Interpretation</a></li>
-<li><a href="#org8173a4b">4.5.2. Stock with low correlations&#x2026;</a></li>
+<li><a href="#orgce4d596">3.5.1. Interpretation</a></li>
+<li><a href="#org56d2ac6">3.5.2. Stock with low correlations&#x2026;</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org04548bd">5. Insights from the CAPM</a>
+<li><a href="#org3e8293e">4. Insights from the CAPM</a>
 <ul>
-<li><a href="#org2aded42">5.1. The effect of correlation on portfolio risk</a></li>
+<li><a href="#org2871521">4.1. The effect of correlation on portfolio risk</a></li>
 </ul>
 </li>
-<li><a href="#org315347d">6. Applied CAPM: Calculating Beta</a></li>
-<li><a href="#orgabb8462">7. Optional: A CAPM video appropriate to an Intro to Finance Course</a></li>
-<li><a href="#org2b15899">8. Optional: A slightly more advanced treatment of the CAPM</a></li>
+<li><a href="#orgd63938b">5. Applied CAPM: Calculating Beta</a></li>
+<li><a href="#orgf0500bc">6. Optional: A CAPM video appropriate to an Intro to Finance Course</a></li>
+<li><a href="#org887e40d">7. Optional: A slightly more advanced treatment of the CAPM</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org4afd896" class="outline-2">
-<h2 id="org4afd896"><span class="section-number-2">1.</span> 5MF Presentations</h2>
+<div id="outline-container-orgeeaa8f6" class="outline-2">
+<h2 id="orgeeaa8f6"><span class="section-number-2">1.</span> Overview</h2>
 <div class="outline-text-2" id="text-1">
-<p>
-<a href="https://www.5minutefinance.org/concepts/the-capital-asset-pricing-model">https://www.5minutefinance.org/concepts/the-capital-asset-pricing-model</a>
-</p>
-
-<p>
-<a href="https://www.5minutefinance.org/concepts/mean-variance-portfolio-optimization">https://www.5minutefinance.org/concepts/mean-variance-portfolio-optimization</a>
-</p>
-</div>
-</div>
-
-<div id="outline-container-org4861470" class="outline-2">
-<h2 id="org4861470"><span class="section-number-2">2.</span> Overview</h2>
-<div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>We know how to calculate cash flows and move them around in time given a discount rate.  We also know where to apply these tools&#x2014;to stock and bond valuation, investment decision rules, etc.  The last step is to figure out how to get the discount rate.  The CAPM will help us do this.</li>
 <li>The CAPM will allow us to <i>understand what we mean by risk</i>.</li>
@@ -313,17 +276,17 @@
 </div>
 </div>
 
-<div id="outline-container-orgb4084db" class="outline-2">
-<h2 id="orgb4084db"><span class="section-number-2">3.</span> Expected Return and Variance</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-orgc0cff8f" class="outline-2">
+<h2 id="orgc0cff8f"><span class="section-number-2">2.</span> Expected Return and Variance</h2>
+<div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgea33a96" class="outline-3">
-<h3 id="orgea33a96"><span class="section-number-3">3.1.</span> Single Asset</h3>
+<div id="outline-container-orge178448" class="outline-3">
+<h3 id="orge178448"><span class="section-number-3">2.1.</span> Single Asset</h3>
 </div>
 
-<div id="outline-container-org1644ae7" class="outline-3">
-<h3 id="org1644ae7"><span class="section-number-3">3.2.</span> Portfolio</h3>
-<div class="outline-text-3" id="text-3-2">
+<div id="outline-container-org4da6692" class="outline-3">
+<h3 id="org4da6692"><span class="section-number-3">2.2.</span> Portfolio</h3>
+<div class="outline-text-3" id="text-2-2">
 <p>
 Say we have two stocks in our portfolio, \(A\) and \(B\).  The <code>Expected Return</code> of our portfolio is:
 </p>
@@ -345,22 +308,22 @@ The portfolio variance is then:
 </p>
 </div>
 
-<div id="outline-container-orga056c07" class="outline-4">
-<h4 id="orga056c07"><span class="section-number-4">3.2.1.</span> Optional:  Portfolio of Two Assets Video</h4>
-<div class="outline-text-4" id="text-3-2-1">
+<div id="outline-container-org647f405" class="outline-4">
+<h4 id="org647f405"><span class="section-number-4">2.2.1.</span> Optional:  Portfolio of Two Assets Video</h4>
+<div class="outline-text-4" id="text-2-2-1">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/dpB5fx5lbA8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgec1cd92" class="outline-2">
-<h2 id="orgec1cd92"><span class="section-number-2">4.</span> The CAPM, A Short Version</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-org78d0a4b" class="outline-2">
+<h2 id="org78d0a4b"><span class="section-number-2">3.</span> The CAPM, A Short Version</h2>
+<div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org6f07fa4" class="outline-3">
-<h3 id="org6f07fa4"><span class="section-number-3">4.1.</span> Realized Returns</h3>
-<div class="outline-text-3" id="text-4-1">
+<div id="outline-container-org57750d1" class="outline-3">
+<h3 id="org57750d1"><span class="section-number-3">3.1.</span> Realized Returns</h3>
+<div class="outline-text-3" id="text-3-1">
 <p>
 \[R_A = E(R_A) + U_A\]
 </p>
@@ -375,9 +338,9 @@ the key idea is as we for a portfolio, \(e_A\), \(e_B\), \(e_C\), etc cancel eac
 </div>
 </div>
 
-<div id="outline-container-orgda302b6" class="outline-3">
-<h3 id="orgda302b6"><span class="section-number-3">4.2.</span> Systematic Risk Principle</h3>
-<div class="outline-text-3" id="text-4-2">
+<div id="outline-container-orgaf4e5d3" class="outline-3">
+<h3 id="orgaf4e5d3"><span class="section-number-3">3.2.</span> Systematic Risk Principle</h3>
+<div class="outline-text-3" id="text-3-2">
 <blockquote>
 <p>
 An asset's expected return depends only on that asset's systematic (nondiversifiable) risk (not on nondiversifiable risk) (it also depends on other market wide factors).
@@ -390,18 +353,20 @@ The idea is if you don't have to hold the risk, you will not be compensated for 
 </div>
 </div>
 
-<div id="outline-container-org64cd482" class="outline-3">
-<h3 id="org64cd482"><span class="section-number-3">4.3.</span> Define \(\beta\)</h3>
-<div class="outline-text-3" id="text-4-3">
+<div id="outline-container-org02336de" class="outline-3">
+<h3 id="org02336de"><span class="section-number-3">3.3.</span> Define \(\beta\)</h3>
+<div class="outline-text-3" id="text-3-3">
 <p>
-We'll define \(\beta_A\) as the amount of systematic risk in asset <i>A</i> relative to the average asset.  The average asset has a \(\beta\) equal to 1.  The average asset is the same as the market.  
+We'll define \(\beta_A\) as the amount of systematic risk in asset <i>A</i> relative to the average asset.  The average asset has a \(\beta\) equal to 1.  The average asset is the same as the market.
 </p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/T8WwRI2cyiA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 </div>
 
-<div id="outline-container-org3e68f10" class="outline-3">
-<h3 id="org3e68f10"><span class="section-number-3">4.4.</span> The Reward to Risk Ratio</h3>
-<div class="outline-text-3" id="text-4-4">
+<div id="outline-container-orge06c695" class="outline-3">
+<h3 id="orge06c695"><span class="section-number-3">3.4.</span> The Reward to Risk Ratio</h3>
+<div class="outline-text-3" id="text-3-4">
 <ul class="org-ul">
 <li>\(E(R_A) - r_f\) is what we expect to gain from investing in a risky asset \(A\) (it is our <code>reward</code>).</li>
 <li>Since we are diversified, our risk from investing in asset \(A\) is \(\beta_A\).</li>
@@ -417,9 +382,9 @@ Thus our <code>reward-per-unit-risk</code> (Reward to Risk Ratio) is:
 </div>
 </div>
 
-<div id="outline-container-org1641b42" class="outline-3">
-<h3 id="org1641b42"><span class="section-number-3">4.5.</span> The CAPM</h3>
-<div class="outline-text-3" id="text-4-5">
+<div id="outline-container-org827a270" class="outline-3">
+<h3 id="org827a270"><span class="section-number-3">3.5.</span> The CAPM</h3>
+<div class="outline-text-3" id="text-3-5">
 <p>
 Via equilibrium argument:
 </p>
@@ -445,9 +410,9 @@ for any capital asset \(X\).
 </p>
 </div>
 
-<div id="outline-container-org60e0a8b" class="outline-4">
-<h4 id="org60e0a8b"><span class="section-number-4">4.5.1.</span> Interpretation</h4>
-<div class="outline-text-4" id="text-4-5-1">
+<div id="outline-container-orgce4d596" class="outline-4">
+<h4 id="orgce4d596"><span class="section-number-4">3.5.1.</span> Interpretation</h4>
+<div class="outline-text-4" id="text-3-5-1">
 <p>
 The expected return on any capital asset is a function of:
 </p>
@@ -470,9 +435,9 @@ The expected return on any asset is equal to the pure time value of money plus t
 </div>
 </div>
 
-<div id="outline-container-org8173a4b" class="outline-4">
-<h4 id="org8173a4b"><span class="section-number-4">4.5.2.</span> Stock with low correlations&#x2026;</h4>
-<div class="outline-text-4" id="text-4-5-2">
+<div id="outline-container-org56d2ac6" class="outline-4">
+<h4 id="org56d2ac6"><span class="section-number-4">3.5.2.</span> Stock with low correlations&#x2026;</h4>
+<div class="outline-text-4" id="text-3-5-2">
 <p>
 Stock with low amount of systematic risk will have low beta coefficients (\(\beta_X = \frac{Cov(R_X, R_m)}{\sigma^2_m}\)) and thus will have low expected returns.  That is, you only require low returns for assets that serve as a market hedge.  Remember:
 </p>
@@ -491,18 +456,18 @@ An asset's risk is not its standard deviation, but in how much that asset increa
 
 
 
-<div id="outline-container-org04548bd" class="outline-2">
-<h2 id="org04548bd"><span class="section-number-2">5.</span> Insights from the CAPM</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-org3e8293e" class="outline-2">
+<h2 id="org3e8293e"><span class="section-number-2">4.</span> Insights from the CAPM</h2>
+<div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li>A Risky Stock Can Make Your Portfolio Safer</li>
 </ul>
 </div>
 
 
-<div id="outline-container-org2aded42" class="outline-3">
-<h3 id="org2aded42"><span class="section-number-3">5.1.</span> The effect of correlation on portfolio risk</h3>
-<div class="outline-text-3" id="text-5-1">
+<div id="outline-container-org2871521" class="outline-3">
+<h3 id="org2871521"><span class="section-number-3">4.1.</span> The effect of correlation on portfolio risk</h3>
+<div class="outline-text-3" id="text-4-1">
 <iframe width="560" height="315" src="https://micfm.shinyapps.io/The_CAPM_app1/"> </iframe>
 </div>
 </div>
@@ -512,32 +477,32 @@ An asset's risk is not its standard deviation, but in how much that asset increa
 
 
 
-<div id="outline-container-org315347d" class="outline-2">
-<h2 id="org315347d"><span class="section-number-2">6.</span> Applied CAPM: Calculating Beta</h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-orgd63938b" class="outline-2">
+<h2 id="orgd63938b"><span class="section-number-2">5.</span> Applied CAPM: Calculating Beta</h2>
+<div class="outline-text-2" id="text-5">
 <iframe width="560" height="315" src="https://micfm.shinyapps.io/The_CAPM_app2/"></iframe>
 </div>
 </div>
 
 
-<div id="outline-container-orgabb8462" class="outline-2">
-<h2 id="orgabb8462"><span class="section-number-2">7.</span> Optional: A CAPM video appropriate to an Intro to Finance Course</h2>
-<div class="outline-text-2" id="text-7">
+<div id="outline-container-orgf0500bc" class="outline-2">
+<h2 id="orgf0500bc"><span class="section-number-2">6.</span> Optional: A CAPM video appropriate to an Intro to Finance Course</h2>
+<div class="outline-text-2" id="text-6">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5vQL-50itig" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 </div>
 
 
-<div id="outline-container-org2b15899" class="outline-2">
-<h2 id="org2b15899"><span class="section-number-2">8.</span> Optional: A slightly more advanced treatment of the CAPM</h2>
-<div class="outline-text-2" id="text-8">
+<div id="outline-container-org887e40d" class="outline-2">
+<h2 id="org887e40d"><span class="section-number-2">7.</span> Optional: A slightly more advanced treatment of the CAPM</h2>
+<div class="outline-text-2" id="text-7">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/coJl_aCBTuA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Matt Brigida, Ph.D.</p>
-<p class="date">Created: 2021-05-28 Fri 22:16</p>
+<p class="date">Created: 2022-02-14 Mon 18:30</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

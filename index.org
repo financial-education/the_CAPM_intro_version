@@ -3,12 +3,6 @@
 #+STARTUP: hideblocks
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 
-* 5MF Presentations
-
-https://www.5minutefinance.org/concepts/the-capital-asset-pricing-model
-
-https://www.5minutefinance.org/concepts/mean-variance-portfolio-optimization
-
 * Overview
 
 - We know how to calculate cash flows and move them around in time given a discount rate.  We also know where to apply these tools---to stock and bond valuation, investment decision rules, etc.  The last step is to figure out how to get the discount rate.  The CAPM will help us do this.
@@ -57,7 +51,11 @@ The idea is if you don't have to hold the risk, you will not be compensated for 
 
 ** Define $\beta$
 
-We'll define $\beta_A$ as the amount of systematic risk in asset /A/ relative to the average asset.  The average asset has a $\beta$ equal to 1.  The average asset is the same as the market.  
+We'll define $\beta_A$ as the amount of systematic risk in asset /A/ relative to the average asset.  The average asset has a $\beta$ equal to 1.  The average asset is the same as the market.
+
+#+BEGIN_EXPORT HTML
+<iframe width="560" height="315" src="https://www.youtube.com/embed/T8WwRI2cyiA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+#+END_EXPORT
 
 ** The Reward to Risk Ratio
 
