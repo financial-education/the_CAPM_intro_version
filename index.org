@@ -171,9 +171,7 @@ beta_reg.params[1]
 #+RESULTS:
 : 0.7474332305172887
 
-
-So XOM's beta coefficient since 2020 is src_python[:session py_beta]{round(beta_reg.params[1], 2)} {{{results(=0.75=)}}}.
-
+So XOM's beta coefficient over the last year is src_python[:session py_beta]{round(beta_reg.params[1], 2)} {{{results(=0.75=)}}}.
 
 * Optional: A CAPM video appropriate to an Intro to Finance Course 
 

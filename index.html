@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-02-14 Mon 22:06 -->
+<!-- 2022-02-14 Mon 22:07 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>The CAPM</title>
@@ -229,50 +229,50 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org53f67d6">1. Overview</a></li>
-<li><a href="#org96c26d6">2. Expected Return and Variance</a>
+<li><a href="#org71c2585">1. Overview</a></li>
+<li><a href="#orgef632f8">2. Expected Return and Variance</a>
 <ul>
-<li><a href="#orge0f9992">2.1. Single Asset</a></li>
-<li><a href="#org02f88aa">2.2. Portfolio</a>
+<li><a href="#org515d2ba">2.1. Single Asset</a></li>
+<li><a href="#org94586fb">2.2. Portfolio</a>
 <ul>
-<li><a href="#orgf71d8ef">2.2.1. Optional:  Portfolio of Two Assets Video</a></li>
+<li><a href="#orgcef3959">2.2.1. Optional:  Portfolio of Two Assets Video</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org338cdea">3. The CAPM, A Short Version</a>
+<li><a href="#org1cafb7e">3. The CAPM, A Short Version</a>
 <ul>
-<li><a href="#orgaa90d45">3.1. Realized Returns</a></li>
-<li><a href="#orgb86b0aa">3.2. Systematic Risk Principle</a></li>
-<li><a href="#orgd0c03c5">3.3. Define \(\beta\)</a></li>
-<li><a href="#orgabf9110">3.4. The Reward to Risk Ratio</a></li>
-<li><a href="#org0f39561">3.5. The CAPM</a>
+<li><a href="#orgcccc58a">3.1. Realized Returns</a></li>
+<li><a href="#org0e42986">3.2. Systematic Risk Principle</a></li>
+<li><a href="#org3738ece">3.3. Define \(\beta\)</a></li>
+<li><a href="#org4de2868">3.4. The Reward to Risk Ratio</a></li>
+<li><a href="#org7cb48e5">3.5. The CAPM</a>
 <ul>
-<li><a href="#org23e8af5">3.5.1. Interpretation</a></li>
-<li><a href="#org20bc8e4">3.5.2. Stock with low correlations&#x2026;</a></li>
+<li><a href="#org4048a1c">3.5.1. Interpretation</a></li>
+<li><a href="#org8f0e1d2">3.5.2. Stock with low correlations&#x2026;</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgb40f96d">4. Insights from the CAPM</a>
+<li><a href="#org9b6682f">4. Insights from the CAPM</a>
 <ul>
-<li><a href="#org779a860">4.1. The effect of correlation on portfolio risk</a></li>
+<li><a href="#org20653df">4.1. The effect of correlation on portfolio risk</a></li>
 </ul>
 </li>
-<li><a href="#orgf89f44f">5. Applied CAPM: Calculating Beta (server may be down)</a>
+<li><a href="#org91125d1">5. Applied CAPM: Calculating Beta (server may be down)</a>
 <ul>
-<li><a href="#org125cffd">5.1. Estimating beta in R</a></li>
-<li><a href="#org091536e">5.2. Estimating beta in Python</a></li>
+<li><a href="#org7454cf1">5.1. Estimating beta in R</a></li>
+<li><a href="#orgf0472c3">5.2. Estimating beta in Python</a></li>
 </ul>
 </li>
-<li><a href="#orgff70f20">6. Optional: A CAPM video appropriate to an Intro to Finance Course</a></li>
-<li><a href="#orgbd595be">7. Optional: A slightly more advanced treatment of the CAPM</a></li>
+<li><a href="#orgae03b7b">6. Optional: A CAPM video appropriate to an Intro to Finance Course</a></li>
+<li><a href="#org03a7601">7. Optional: A slightly more advanced treatment of the CAPM</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org53f67d6" class="outline-2">
-<h2 id="org53f67d6"><span class="section-number-2">1.</span> Overview</h2>
+<div id="outline-container-org71c2585" class="outline-2">
+<h2 id="org71c2585"><span class="section-number-2">1.</span> Overview</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>We know how to calculate cash flows and move them around in time given a discount rate.  We also know where to apply these tools&#x2014;to stock and bond valuation, investment decision rules, etc.  The last step is to figure out how to get the discount rate.  The CAPM will help us do this.</li>
@@ -282,16 +282,16 @@
 </div>
 </div>
 
-<div id="outline-container-org96c26d6" class="outline-2">
-<h2 id="org96c26d6"><span class="section-number-2">2.</span> Expected Return and Variance</h2>
+<div id="outline-container-orgef632f8" class="outline-2">
+<h2 id="orgef632f8"><span class="section-number-2">2.</span> Expected Return and Variance</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orge0f9992" class="outline-3">
-<h3 id="orge0f9992"><span class="section-number-3">2.1.</span> Single Asset</h3>
+<div id="outline-container-org515d2ba" class="outline-3">
+<h3 id="org515d2ba"><span class="section-number-3">2.1.</span> Single Asset</h3>
 </div>
 
-<div id="outline-container-org02f88aa" class="outline-3">
-<h3 id="org02f88aa"><span class="section-number-3">2.2.</span> Portfolio</h3>
+<div id="outline-container-org94586fb" class="outline-3">
+<h3 id="org94586fb"><span class="section-number-3">2.2.</span> Portfolio</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Say we have two stocks in our portfolio, \(A\) and \(B\).  The <code>Expected Return</code> of our portfolio is:
@@ -314,8 +314,8 @@ The portfolio variance is then:
 </p>
 </div>
 
-<div id="outline-container-orgf71d8ef" class="outline-4">
-<h4 id="orgf71d8ef"><span class="section-number-4">2.2.1.</span> Optional:  Portfolio of Two Assets Video</h4>
+<div id="outline-container-orgcef3959" class="outline-4">
+<h4 id="orgcef3959"><span class="section-number-4">2.2.1.</span> Optional:  Portfolio of Two Assets Video</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/dpB5fx5lbA8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
@@ -323,12 +323,12 @@ The portfolio variance is then:
 </div>
 </div>
 
-<div id="outline-container-org338cdea" class="outline-2">
-<h2 id="org338cdea"><span class="section-number-2">3.</span> The CAPM, A Short Version</h2>
+<div id="outline-container-org1cafb7e" class="outline-2">
+<h2 id="org1cafb7e"><span class="section-number-2">3.</span> The CAPM, A Short Version</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgaa90d45" class="outline-3">
-<h3 id="orgaa90d45"><span class="section-number-3">3.1.</span> Realized Returns</h3>
+<div id="outline-container-orgcccc58a" class="outline-3">
+<h3 id="orgcccc58a"><span class="section-number-3">3.1.</span> Realized Returns</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 \[R_A = E(R_A) + U_A\]
@@ -344,8 +344,8 @@ the key idea is as we for a portfolio, \(e_A\), \(e_B\), \(e_C\), etc cancel eac
 </div>
 </div>
 
-<div id="outline-container-orgb86b0aa" class="outline-3">
-<h3 id="orgb86b0aa"><span class="section-number-3">3.2.</span> Systematic Risk Principle</h3>
+<div id="outline-container-org0e42986" class="outline-3">
+<h3 id="org0e42986"><span class="section-number-3">3.2.</span> Systematic Risk Principle</h3>
 <div class="outline-text-3" id="text-3-2">
 <blockquote>
 <p>
@@ -359,8 +359,8 @@ The idea is if you don't have to hold the risk, you will not be compensated for 
 </div>
 </div>
 
-<div id="outline-container-orgd0c03c5" class="outline-3">
-<h3 id="orgd0c03c5"><span class="section-number-3">3.3.</span> Define \(\beta\)</h3>
+<div id="outline-container-org3738ece" class="outline-3">
+<h3 id="org3738ece"><span class="section-number-3">3.3.</span> Define \(\beta\)</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 We'll define \(\beta_A\) as the amount of systematic risk in asset <i>A</i> relative to the average asset.  The average asset has a \(\beta\) equal to 1.  The average asset is the same as the market.
@@ -370,8 +370,8 @@ We'll define \(\beta_A\) as the amount of systematic risk in asset <i>A</i> rela
 </div>
 </div>
 
-<div id="outline-container-orgabf9110" class="outline-3">
-<h3 id="orgabf9110"><span class="section-number-3">3.4.</span> The Reward to Risk Ratio</h3>
+<div id="outline-container-org4de2868" class="outline-3">
+<h3 id="org4de2868"><span class="section-number-3">3.4.</span> The Reward to Risk Ratio</h3>
 <div class="outline-text-3" id="text-3-4">
 <ul class="org-ul">
 <li>\(E(R_A) - r_f\) is what we expect to gain from investing in a risky asset \(A\) (it is our <code>reward</code>).</li>
@@ -388,8 +388,8 @@ Thus our <code>reward-per-unit-risk</code> (Reward to Risk Ratio) is:
 </div>
 </div>
 
-<div id="outline-container-org0f39561" class="outline-3">
-<h3 id="org0f39561"><span class="section-number-3">3.5.</span> The CAPM</h3>
+<div id="outline-container-org7cb48e5" class="outline-3">
+<h3 id="org7cb48e5"><span class="section-number-3">3.5.</span> The CAPM</h3>
 <div class="outline-text-3" id="text-3-5">
 <p>
 Via equilibrium argument:
@@ -416,8 +416,8 @@ for any capital asset \(X\).
 </p>
 </div>
 
-<div id="outline-container-org23e8af5" class="outline-4">
-<h4 id="org23e8af5"><span class="section-number-4">3.5.1.</span> Interpretation</h4>
+<div id="outline-container-org4048a1c" class="outline-4">
+<h4 id="org4048a1c"><span class="section-number-4">3.5.1.</span> Interpretation</h4>
 <div class="outline-text-4" id="text-3-5-1">
 <p>
 The expected return on any capital asset is a function of:
@@ -441,8 +441,8 @@ The expected return on any asset is equal to the pure time value of money plus t
 </div>
 </div>
 
-<div id="outline-container-org20bc8e4" class="outline-4">
-<h4 id="org20bc8e4"><span class="section-number-4">3.5.2.</span> Stock with low correlations&#x2026;</h4>
+<div id="outline-container-org8f0e1d2" class="outline-4">
+<h4 id="org8f0e1d2"><span class="section-number-4">3.5.2.</span> Stock with low correlations&#x2026;</h4>
 <div class="outline-text-4" id="text-3-5-2">
 <p>
 Stock with low amount of systematic risk will have low beta coefficients (\(\beta_X = \frac{Cov(R_X, R_m)}{\sigma^2_m}\)) and thus will have low expected returns.  That is, you only require low returns for assets that serve as a market hedge.  Remember:
@@ -462,8 +462,8 @@ An asset's risk is not its standard deviation, but in how much that asset increa
 
 
 
-<div id="outline-container-orgb40f96d" class="outline-2">
-<h2 id="orgb40f96d"><span class="section-number-2">4.</span> Insights from the CAPM</h2>
+<div id="outline-container-org9b6682f" class="outline-2">
+<h2 id="org9b6682f"><span class="section-number-2">4.</span> Insights from the CAPM</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li>A Risky Stock Can Make Your Portfolio Safer</li>
@@ -471,22 +471,22 @@ An asset's risk is not its standard deviation, but in how much that asset increa
 </div>
 
 
-<div id="outline-container-org779a860" class="outline-3">
-<h3 id="org779a860"><span class="section-number-3">4.1.</span> The effect of correlation on portfolio risk</h3>
+<div id="outline-container-org20653df" class="outline-3">
+<h3 id="org20653df"><span class="section-number-3">4.1.</span> The effect of correlation on portfolio risk</h3>
 <div class="outline-text-3" id="text-4-1">
 <iframe width="560" height="315" src="https://micfm.shinyapps.io/The_CAPM_app1/"> </iframe>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgf89f44f" class="outline-2">
-<h2 id="orgf89f44f"><span class="section-number-2">5.</span> Applied CAPM: Calculating Beta (server may be down)</h2>
+<div id="outline-container-org91125d1" class="outline-2">
+<h2 id="org91125d1"><span class="section-number-2">5.</span> Applied CAPM: Calculating Beta (server may be down)</h2>
 <div class="outline-text-2" id="text-5">
 <iframe width="560" height="315" src="https://micfm.shinyapps.io/The_CAPM_app2/"></iframe>
 </div>
 
-<div id="outline-container-org125cffd" class="outline-3">
-<h3 id="org125cffd"><span class="section-number-3">5.1.</span> Estimating beta in R</h3>
+<div id="outline-container-org7454cf1" class="outline-3">
+<h3 id="org7454cf1"><span class="section-number-3">5.1.</span> Estimating beta in R</h3>
 <div class="outline-text-3" id="text-5-1">
 <div class="org-src-container">
 <pre class="src src-R"><span style="color: #a9a1e1;">library</span>(quantmod)
@@ -513,8 +513,8 @@ So TSLA's beta coefficient since 2020 is <code>1.39</code>.
 </div>
 </div>
 
-<div id="outline-container-org091536e" class="outline-3">
-<h3 id="org091536e"><span class="section-number-3">5.2.</span> Estimating beta in Python</h3>
+<div id="outline-container-orgf0472c3" class="outline-3">
+<h3 id="orgf0472c3"><span class="section-number-3">5.2.</span> Estimating beta in Python</h3>
 <div class="outline-text-3" id="text-5-2">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #51afef;">import</span> yfinance <span style="color: #51afef;">as</span> yf
@@ -540,29 +540,27 @@ beta_reg.params[1]
 </div>
 
 <pre class="example">
-0.7474330133506688
+0.747432740022067
 </pre>
 
 
-
 <p>
-So XOM's beta coefficient since 2020 is <code>0.75</code>.
+So XOM's beta coefficient over the last year is <code>0.75</code>.
 </p>
 </div>
 </div>
 </div>
 
-
-<div id="outline-container-orgff70f20" class="outline-2">
-<h2 id="orgff70f20"><span class="section-number-2">6.</span> Optional: A CAPM video appropriate to an Intro to Finance Course</h2>
+<div id="outline-container-orgae03b7b" class="outline-2">
+<h2 id="orgae03b7b"><span class="section-number-2">6.</span> Optional: A CAPM video appropriate to an Intro to Finance Course</h2>
 <div class="outline-text-2" id="text-6">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5vQL-50itig" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 </div>
 
 
-<div id="outline-container-orgbd595be" class="outline-2">
-<h2 id="orgbd595be"><span class="section-number-2">7.</span> Optional: A slightly more advanced treatment of the CAPM</h2>
+<div id="outline-container-org03a7601" class="outline-2">
+<h2 id="org03a7601"><span class="section-number-2">7.</span> Optional: A slightly more advanced treatment of the CAPM</h2>
 <div class="outline-text-2" id="text-7">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/coJl_aCBTuA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
@@ -570,7 +568,7 @@ So XOM's beta coefficient since 2020 is <code>0.75</code>.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Matt Brigida, Ph.D.</p>
-<p class="date">Created: 2022-02-14 Mon 22:06</p>
+<p class="date">Created: 2022-02-14 Mon 22:07</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
