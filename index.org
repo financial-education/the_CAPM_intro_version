@@ -124,7 +124,7 @@ An asset's risk is not its standard deviation, but in how much that asset increa
 <iframe width="560" height="315" src="https://micfm.shinyapps.io/The_CAPM_app2/"></iframe>
 #+END_EXPORT
 
-Estimating beta in R.
+** Estimating beta in R
 
 #+begin_src R :exports both :session r_beta
 library(quantmod)
@@ -143,6 +143,36 @@ beta
 : 1.39
 
 So TSLA's beta coefficient since 2020 is src_R[:session r_beta]{beta} {{{results(=1.39=)}}}.
+
+** Estimating beta in Python
+
+#+begin_src python :exports both :session py_beta
+import yfinance as yf
+import pandas as pd
+import statsmodels.formula.api as sm
+
+xom = yf.Ticker("XOM")
+spy = yf.Ticker("SPY")
+
+xom_price = xom.history(period="12mo")  # just one year
+spy_price = spy.history(period="12mo")
+
+xom_returns = xom_price['Close'].pct_change()[1:]
+spy_returns = spy_price['Close'].pct_change()[1:]
+
+data = pd.DataFrame(pd.concat([xom_returns, spy_returns], axis = 1))
+data.columns.values[0] = "xom"
+data.columns.values[1] = "spy"
+
+beta_reg = sm.ols(formula="xom ~ spy", data=data).fit()
+beta_reg.params[1]
+#+end_src
+
+#+RESULTS:
+: 0.7474332305172887
+
+
+So XOM's beta coefficient since 2020 is src_python[:session py_beta]{round(beta_reg.params[1], 2)} {{{results(=0.75=)}}}.
 
 
 * Optional: A CAPM video appropriate to an Intro to Finance Course 
