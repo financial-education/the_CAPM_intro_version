@@ -2,6 +2,7 @@
 #+author: Matt Brigida, Ph.D.
 #+STARTUP: hideblocks
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+#+HTML_HEAD: <style>pre.src{background:#343131;color:white;} </style>
 
 * Overview
 
@@ -117,15 +118,31 @@ An asset's risk is not its standard deviation, but in how much that asset increa
 <iframe width="560" height="315" src="https://micfm.shinyapps.io/The_CAPM_app1/"> </iframe>
 #+END_EXPORT
 
-
-
-
-
-* Applied CAPM: Calculating Beta
+* Applied CAPM: Calculating Beta (server may be down)
 
 #+BEGIN_EXPORT HTML
 <iframe width="560" height="315" src="https://micfm.shinyapps.io/The_CAPM_app2/"></iframe>
 #+END_EXPORT
+
+Estimating beta in R.
+
+#+begin_src R :exports both :session r_beta
+library(quantmod)
+
+tsla <- getSymbols("tsla", auto.assign=FALSE)
+spy <- getSymbols("spy", auto.assign=FALSE)  # spy is an ETF traching the S&P 500 (the market)
+
+tsla_returns <- Delt(Ad(tsla['2020/'])) # just use 2020 forward
+spy_returns <- Delt(Ad(spy['2020/']))
+
+beta <- round(lm(tsla_returns ~ spy_returns)$coef[2], 2)  # the beta coefficient
+beta
+#+end_src
+
+#+RESULTS:
+: 1.39
+
+So TSLA's beta coefficient since 2020 is src_R[:session r_beta]{beta} {{{results(=1.39=)}}}.
 
 
 * Optional: A CAPM video appropriate to an Intro to Finance Course 
