@@ -115,18 +115,18 @@ An asset's risk is not its standard deviation, but in how much that asset increa
 ** The effect of correlation on portfolio risk
 
 #+BEGIN_EXPORT HTML
-<iframe width="560" height="315" src="https://micfm.shinyapps.io/The_CAPM_app1/"> </iframe>
+<iframe width="650" height="700" src="https://ztranche.com/corporate_finance/capm/app1/"> </iframe>
 #+END_EXPORT
 
 * Applied CAPM: Calculating Beta (server may be down)
 
 #+BEGIN_EXPORT HTML
-<iframe width="560" height="315" src="https://micfm.shinyapps.io/The_CAPM_app2/"></iframe>
+<iframe width="650" height="700" src="https://ztranche.com/corporate_finance/capm/app2/"></iframe>
 #+END_EXPORT
 
 ** Estimating beta in R
 
-#+begin_src R :exports both :session r_beta
+#+begin_src R :exports both :session r_beta :eval no
 library(quantmod)
 
 tsla <- getSymbols("tsla", auto.assign=FALSE)
@@ -146,7 +146,7 @@ So TSLA's beta coefficient since 2020 is src_R[:session r_beta]{beta} {{{results
 
 ** Estimating beta in Python
 
-#+begin_src python :exports both :session py_beta
+#+begin_src python :exports both :session py_beta :eval no
 import yfinance as yf
 import pandas as pd
 import statsmodels.formula.api as sm
