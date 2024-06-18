@@ -1,6 +1,7 @@
 #+title: The CAPM
 #+author: Matt Brigida, Ph.D.
 #+STARTUP: hideblocks
+#+PROPERTY: header-args    :eval no
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 #+HTML_HEAD: <style>pre.src{background:#343131;color:white;} </style>
 
@@ -118,7 +119,20 @@ An asset's risk is not its standard deviation, but in how much that asset increa
 <iframe width="650" height="700" src="https://ztranche.com/corporate_finance/capm/app1/"> </iframe>
 #+END_EXPORT
 
-* Applied CAPM: Calculating Beta (server may be down)
+* Applied CAPM: Calculating Beta
+
+Below we estimate CAPM beta coefficients for stock /i/ using an index model:
+
+$$r_{it} = \alpha_i + \beta_i r_{mt} + e_t$$
+
+where:
+
+- $r_{it}$ is the return on stock /i/ at time /t/
+- $\alpha$ and $\beta$ are estimated coefficients
+- $r_{mt}$ is the return on the market portfolio (S&P 500) at time /t/
+- $e_t$ is the error term
+
+In the app below, input a stock and see a scatter plot of the stock and market returns, as well as the estimated regression line with the beta coefficient. Note, you can also change the estimation period.  Does a given stock's beta change significantly if you change the estimation period?
 
 #+BEGIN_EXPORT HTML
 <iframe width="650" height="700" src="https://ztranche.com/corporate_finance/capm/app2/"></iframe>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-04-02 Tue 22:03 -->
+<!-- 2024-06-17 Mon 21:29 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>The CAPM</title>
@@ -56,50 +56,50 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org759217a">1. Overview</a></li>
-<li><a href="#org0fae6c5">2. Expected Return and Variance</a>
+<li><a href="#org295126a">1. Overview</a></li>
+<li><a href="#orgffd5c55">2. Expected Return and Variance</a>
 <ul>
-<li><a href="#org6bc3b7e">2.1. Single Asset</a></li>
-<li><a href="#org359045f">2.2. Portfolio</a>
+<li><a href="#org7cf2818">2.1. Single Asset</a></li>
+<li><a href="#org7bbb0cc">2.2. Portfolio</a>
 <ul>
-<li><a href="#orgea735e5">2.2.1. Optional:  Portfolio of Two Assets Video</a></li>
+<li><a href="#org93b711d">2.2.1. Optional:  Portfolio of Two Assets Video</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgf2e229a">3. The CAPM, A Short Version</a>
+<li><a href="#org398d428">3. The CAPM, A Short Version</a>
 <ul>
-<li><a href="#org1044607">3.1. Realized Returns</a></li>
-<li><a href="#orga52498e">3.2. Systematic Risk Principle</a></li>
-<li><a href="#org509e3ec">3.3. Define \(\beta\)</a></li>
-<li><a href="#org166d29d">3.4. The Reward to Risk Ratio</a></li>
-<li><a href="#org083e6ad">3.5. The CAPM</a>
+<li><a href="#org837e799">3.1. Realized Returns</a></li>
+<li><a href="#org6e02f4f">3.2. Systematic Risk Principle</a></li>
+<li><a href="#org36d7d2e">3.3. Define \(\beta\)</a></li>
+<li><a href="#org3213f59">3.4. The Reward to Risk Ratio</a></li>
+<li><a href="#org35b00ed">3.5. The CAPM</a>
 <ul>
-<li><a href="#org81e58d1">3.5.1. Interpretation</a></li>
-<li><a href="#org08e8560">3.5.2. Stock with low correlations&#x2026;</a></li>
+<li><a href="#org6ffc9aa">3.5.1. Interpretation</a></li>
+<li><a href="#orgf2b2d68">3.5.2. Stock with low correlations&#x2026;</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org3dac6c7">4. Insights from the CAPM</a>
+<li><a href="#orgf1732ac">4. Insights from the CAPM</a>
 <ul>
-<li><a href="#orgf391d3b">4.1. The effect of correlation on portfolio risk</a></li>
+<li><a href="#org464b1d0">4.1. The effect of correlation on portfolio risk</a></li>
 </ul>
 </li>
-<li><a href="#org3e3a408">5. Applied CAPM: Calculating Beta (server may be down)</a>
+<li><a href="#org7c9b85d">5. Applied CAPM: Calculating Beta</a>
 <ul>
-<li><a href="#org87ae958">5.1. Estimating beta in R</a></li>
-<li><a href="#org13b1516">5.2. Estimating beta in Python</a></li>
+<li><a href="#orgf4ab6ba">5.1. Estimating beta in R</a></li>
+<li><a href="#orge5aeffd">5.2. Estimating beta in Python</a></li>
 </ul>
 </li>
-<li><a href="#org5b8bf4b">6. Optional: A CAPM video appropriate to an Intro to Finance Course</a></li>
-<li><a href="#orgde76e9d">7. Optional: A slightly more advanced treatment of the CAPM</a></li>
+<li><a href="#orge980414">6. Optional: A CAPM video appropriate to an Intro to Finance Course</a></li>
+<li><a href="#org928f41c">7. Optional: A slightly more advanced treatment of the CAPM</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org759217a" class="outline-2">
-<h2 id="org759217a"><span class="section-number-2">1.</span> Overview</h2>
+<div id="outline-container-org295126a" class="outline-2">
+<h2 id="org295126a"><span class="section-number-2">1.</span> Overview</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>We know how to calculate cash flows and move them around in time given a discount rate.  We also know where to apply these tools&#x2014;to stock and bond valuation, investment decision rules, etc.  The last step is to figure out how to get the discount rate.  The CAPM will help us do this.</li>
@@ -109,16 +109,16 @@
 </div>
 </div>
 
-<div id="outline-container-org0fae6c5" class="outline-2">
-<h2 id="org0fae6c5"><span class="section-number-2">2.</span> Expected Return and Variance</h2>
+<div id="outline-container-orgffd5c55" class="outline-2">
+<h2 id="orgffd5c55"><span class="section-number-2">2.</span> Expected Return and Variance</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org6bc3b7e" class="outline-3">
-<h3 id="org6bc3b7e"><span class="section-number-3">2.1.</span> Single Asset</h3>
+<div id="outline-container-org7cf2818" class="outline-3">
+<h3 id="org7cf2818"><span class="section-number-3">2.1.</span> Single Asset</h3>
 </div>
 
-<div id="outline-container-org359045f" class="outline-3">
-<h3 id="org359045f"><span class="section-number-3">2.2.</span> Portfolio</h3>
+<div id="outline-container-org7bbb0cc" class="outline-3">
+<h3 id="org7bbb0cc"><span class="section-number-3">2.2.</span> Portfolio</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Say we have two stocks in our portfolio, \(A\) and \(B\).  The <code>Expected Return</code> of our portfolio is:
@@ -141,8 +141,8 @@ The portfolio variance is then:
 </p>
 </div>
 
-<div id="outline-container-orgea735e5" class="outline-4">
-<h4 id="orgea735e5"><span class="section-number-4">2.2.1.</span> Optional:  Portfolio of Two Assets Video</h4>
+<div id="outline-container-org93b711d" class="outline-4">
+<h4 id="org93b711d"><span class="section-number-4">2.2.1.</span> Optional:  Portfolio of Two Assets Video</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/dpB5fx5lbA8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
@@ -150,12 +150,12 @@ The portfolio variance is then:
 </div>
 </div>
 
-<div id="outline-container-orgf2e229a" class="outline-2">
-<h2 id="orgf2e229a"><span class="section-number-2">3.</span> The CAPM, A Short Version</h2>
+<div id="outline-container-org398d428" class="outline-2">
+<h2 id="org398d428"><span class="section-number-2">3.</span> The CAPM, A Short Version</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org1044607" class="outline-3">
-<h3 id="org1044607"><span class="section-number-3">3.1.</span> Realized Returns</h3>
+<div id="outline-container-org837e799" class="outline-3">
+<h3 id="org837e799"><span class="section-number-3">3.1.</span> Realized Returns</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 \[R_A = E(R_A) + U_A\]
@@ -171,8 +171,8 @@ the key idea is as we for a portfolio, \(e_A\), \(e_B\), \(e_C\), etc cancel eac
 </div>
 </div>
 
-<div id="outline-container-orga52498e" class="outline-3">
-<h3 id="orga52498e"><span class="section-number-3">3.2.</span> Systematic Risk Principle</h3>
+<div id="outline-container-org6e02f4f" class="outline-3">
+<h3 id="org6e02f4f"><span class="section-number-3">3.2.</span> Systematic Risk Principle</h3>
 <div class="outline-text-3" id="text-3-2">
 <blockquote>
 <p>
@@ -186,8 +186,8 @@ The idea is if you don't have to hold the risk, you will not be compensated for 
 </div>
 </div>
 
-<div id="outline-container-org509e3ec" class="outline-3">
-<h3 id="org509e3ec"><span class="section-number-3">3.3.</span> Define \(\beta\)</h3>
+<div id="outline-container-org36d7d2e" class="outline-3">
+<h3 id="org36d7d2e"><span class="section-number-3">3.3.</span> Define \(\beta\)</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 We'll define \(\beta_A\) as the amount of systematic risk in asset <i>A</i> relative to the average asset.  The average asset has a \(\beta\) equal to 1.  The average asset is the same as the market.
@@ -197,8 +197,8 @@ We'll define \(\beta_A\) as the amount of systematic risk in asset <i>A</i> rela
 </div>
 </div>
 
-<div id="outline-container-org166d29d" class="outline-3">
-<h3 id="org166d29d"><span class="section-number-3">3.4.</span> The Reward to Risk Ratio</h3>
+<div id="outline-container-org3213f59" class="outline-3">
+<h3 id="org3213f59"><span class="section-number-3">3.4.</span> The Reward to Risk Ratio</h3>
 <div class="outline-text-3" id="text-3-4">
 <ul class="org-ul">
 <li>\(E(R_A) - r_f\) is what we expect to gain from investing in a risky asset \(A\) (it is our <code>reward</code>).</li>
@@ -215,8 +215,8 @@ Thus our <code>reward-per-unit-risk</code> (Reward to Risk Ratio) is:
 </div>
 </div>
 
-<div id="outline-container-org083e6ad" class="outline-3">
-<h3 id="org083e6ad"><span class="section-number-3">3.5.</span> The CAPM</h3>
+<div id="outline-container-org35b00ed" class="outline-3">
+<h3 id="org35b00ed"><span class="section-number-3">3.5.</span> The CAPM</h3>
 <div class="outline-text-3" id="text-3-5">
 <p>
 Via equilibrium argument:
@@ -243,8 +243,8 @@ for any capital asset \(X\).
 </p>
 </div>
 
-<div id="outline-container-org81e58d1" class="outline-4">
-<h4 id="org81e58d1"><span class="section-number-4">3.5.1.</span> Interpretation</h4>
+<div id="outline-container-org6ffc9aa" class="outline-4">
+<h4 id="org6ffc9aa"><span class="section-number-4">3.5.1.</span> Interpretation</h4>
 <div class="outline-text-4" id="text-3-5-1">
 <p>
 The expected return on any capital asset is a function of:
@@ -268,8 +268,8 @@ The expected return on any asset is equal to the pure time value of money plus t
 </div>
 </div>
 
-<div id="outline-container-org08e8560" class="outline-4">
-<h4 id="org08e8560"><span class="section-number-4">3.5.2.</span> Stock with low correlations&#x2026;</h4>
+<div id="outline-container-orgf2b2d68" class="outline-4">
+<h4 id="orgf2b2d68"><span class="section-number-4">3.5.2.</span> Stock with low correlations&#x2026;</h4>
 <div class="outline-text-4" id="text-3-5-2">
 <p>
 Stock with low amount of systematic risk will have low beta coefficients (\(\beta_X = \frac{Cov(R_X, R_m)}{\sigma^2_m}\)) and thus will have low expected returns.  That is, you only require low returns for assets that serve as a market hedge.  Remember:
@@ -289,8 +289,8 @@ An asset's risk is not its standard deviation, but in how much that asset increa
 
 
 
-<div id="outline-container-org3dac6c7" class="outline-2">
-<h2 id="org3dac6c7"><span class="section-number-2">4.</span> Insights from the CAPM</h2>
+<div id="outline-container-orgf1732ac" class="outline-2">
+<h2 id="orgf1732ac"><span class="section-number-2">4.</span> Insights from the CAPM</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li>A Risky Stock Can Make Your Portfolio Safer</li>
@@ -298,33 +298,56 @@ An asset's risk is not its standard deviation, but in how much that asset increa
 </div>
 
 
-<div id="outline-container-orgf391d3b" class="outline-3">
-<h3 id="orgf391d3b"><span class="section-number-3">4.1.</span> The effect of correlation on portfolio risk</h3>
+<div id="outline-container-org464b1d0" class="outline-3">
+<h3 id="org464b1d0"><span class="section-number-3">4.1.</span> The effect of correlation on portfolio risk</h3>
 <div class="outline-text-3" id="text-4-1">
 <iframe width="650" height="700" src="https://ztranche.com/corporate_finance/capm/app1/"> </iframe>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org3e3a408" class="outline-2">
-<h2 id="org3e3a408"><span class="section-number-2">5.</span> Applied CAPM: Calculating Beta (server may be down)</h2>
+<div id="outline-container-org7c9b85d" class="outline-2">
+<h2 id="org7c9b85d"><span class="section-number-2">5.</span> Applied CAPM: Calculating Beta</h2>
 <div class="outline-text-2" id="text-5">
+<p>
+Below we estimate CAPM beta coefficients for stock <i>i</i> using an index model:
+</p>
+
+<p>
+\[r_{it} = \alpha_i + \beta_i r_{mt} + e_t\]
+</p>
+
+<p>
+where:
+</p>
+
+<ul class="org-ul">
+<li>\(r_{it}\) is the return on stock <i>i</i> at time <i>t</i></li>
+<li>\(\alpha\) and \(\beta\) are estimated coefficients</li>
+<li>\(r_{mt}\) is the return on the market portfolio (S&amp;P 500) at time <i>t</i></li>
+<li>\(e_t\) is the error term</li>
+</ul>
+
+<p>
+In the app below, input a stock and see a scatter plot of the stock and market returns, as well as the estimated regression line with the beta coefficient. Note, you can also change the estimation period.  Does a given stock's beta change significantly if you change the estimation period?
+</p>
+
 <iframe width="650" height="700" src="https://ztranche.com/corporate_finance/capm/app2/"></iframe>
 </div>
 
-<div id="outline-container-org87ae958" class="outline-3">
-<h3 id="org87ae958"><span class="section-number-3">5.1.</span> Estimating beta in R</h3>
+<div id="outline-container-orgf4ab6ba" class="outline-3">
+<h3 id="orgf4ab6ba"><span class="section-number-3">5.1.</span> Estimating beta in R</h3>
 <div class="outline-text-3" id="text-5-1">
 <div class="org-src-container">
-<pre class="src src-R"><span style="color: #268bd2; font-weight: bold;">library</span>(quantmod)
+<pre class="src src-R"><span style="color: #fd971f;">library</span>(quantmod)
 
-tsla <span style="color: #268bd2; font-weight: bold;">&lt;-</span> getSymbols(<span style="color: #2aa198;">"tsla"</span>, auto.assign=<span style="color: #b58900;">FALSE</span>)
-spy <span style="color: #268bd2; font-weight: bold;">&lt;-</span> getSymbols(<span style="color: #2aa198;">"spy"</span>, auto.assign=<span style="color: #b58900;">FALSE</span>)  <span style="color: #586e75;"># </span><span style="color: #586e75;">spy is an ETF traching the S&amp;P 500 (the market)</span>
+tsla <span style="color: #fd971f;">&lt;-</span> getSymbols(<span style="color: #e2c770;">"tsla"</span>, auto.assign=<span style="color: #66d9ef;">FALSE</span>)
+spy <span style="color: #fd971f;">&lt;-</span> getSymbols(<span style="color: #e2c770;">"spy"</span>, auto.assign=<span style="color: #66d9ef;">FALSE</span>)  <span style="color: #555556;"># </span><span style="color: #555556;">spy is an ETF traching the S&amp;P 500 (the market)</span>
 
-tsla_returns <span style="color: #268bd2; font-weight: bold;">&lt;-</span> Delt(Ad(tsla[<span style="color: #2aa198;">'2020/'</span>])) <span style="color: #586e75;"># </span><span style="color: #586e75;">just use 2020 forward</span>
-spy_returns <span style="color: #268bd2; font-weight: bold;">&lt;-</span> Delt(Ad(spy[<span style="color: #2aa198;">'2020/'</span>]))
+tsla_returns <span style="color: #fd971f;">&lt;-</span> Delt(Ad(tsla[<span style="color: #e2c770;">'2020/'</span>])) <span style="color: #555556;"># </span><span style="color: #555556;">just use 2020 forward</span>
+spy_returns <span style="color: #fd971f;">&lt;-</span> Delt(Ad(spy[<span style="color: #e2c770;">'2020/'</span>]))
 
-beta <span style="color: #268bd2; font-weight: bold;">&lt;-</span> round(lm(tsla_returns ~ spy_returns)$coef[2], 2)  <span style="color: #586e75;"># </span><span style="color: #586e75;">the beta coefficient</span>
+beta <span style="color: #fd971f;">&lt;-</span> round(lm(tsla_returns ~ spy_returns)$coef[2], 2)  <span style="color: #555556;"># </span><span style="color: #555556;">the beta coefficient</span>
 beta
 </pre>
 </div>
@@ -335,33 +358,33 @@ beta
 
 
 <p>
-So TSLA's beta coefficient since 2020 is <code>1.55</code>.
+So TSLA's beta coefficient since 2020 is <code>1.39</code>.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org13b1516" class="outline-3">
-<h3 id="org13b1516"><span class="section-number-3">5.2.</span> Estimating beta in Python</h3>
+<div id="outline-container-orge5aeffd" class="outline-3">
+<h3 id="orge5aeffd"><span class="section-number-3">5.2.</span> Estimating beta in Python</h3>
 <div class="outline-text-3" id="text-5-2">
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #859900; font-weight: bold;">import</span> yfinance <span style="color: #859900; font-weight: bold;">as</span> yf
-<span style="color: #859900; font-weight: bold;">import</span> pandas <span style="color: #859900; font-weight: bold;">as</span> pd
-<span style="color: #859900; font-weight: bold;">import</span> statsmodels.formula.api <span style="color: #859900; font-weight: bold;">as</span> sm
+<pre class="src src-python"><span style="color: #fb2874;">import</span> yfinance <span style="color: #fb2874;">as</span> yf
+<span style="color: #fb2874;">import</span> pandas <span style="color: #fb2874;">as</span> pd
+<span style="color: #fb2874;">import</span> statsmodels.formula.api <span style="color: #fb2874;">as</span> sm
 
-<span style="color: #268bd2;">xom</span> = yf.Ticker(<span style="color: #2aa198;">"XOM"</span>)
-<span style="color: #268bd2;">spy</span> = yf.Ticker(<span style="color: #2aa198;">"SPY"</span>)
+<span style="color: #fd971f;">xom</span> = yf.Ticker(<span style="color: #e2c770;">"XOM"</span>)
+<span style="color: #fd971f;">spy</span> = yf.Ticker(<span style="color: #e2c770;">"SPY"</span>)
 
-<span style="color: #268bd2;">xom_price</span> = xom.history(period=<span style="color: #2aa198;">"12mo"</span>)  <span style="color: #586e75;"># </span><span style="color: #586e75;">just one year</span>
-<span style="color: #268bd2;">spy_price</span> = spy.history(period=<span style="color: #2aa198;">"12mo"</span>)
+<span style="color: #fd971f;">xom_price</span> = xom.history(period=<span style="color: #e2c770;">"12mo"</span>)  <span style="color: #555556;"># </span><span style="color: #555556;">just one year</span>
+<span style="color: #fd971f;">spy_price</span> = spy.history(period=<span style="color: #e2c770;">"12mo"</span>)
 
-<span style="color: #268bd2;">xom_returns</span> = xom_price[<span style="color: #2aa198;">'Close'</span>].pct_change()[1:]
-<span style="color: #268bd2;">spy_returns</span> = spy_price[<span style="color: #2aa198;">'Close'</span>].pct_change()[1:]
+<span style="color: #fd971f;">xom_returns</span> = xom_price[<span style="color: #e2c770;">'Close'</span>].pct_change()[1:]
+<span style="color: #fd971f;">spy_returns</span> = spy_price[<span style="color: #e2c770;">'Close'</span>].pct_change()[1:]
 
-<span style="color: #268bd2;">data</span> = pd.DataFrame(pd.concat([xom_returns, spy_returns], axis = 1))
-data.columns.<span style="color: #268bd2;">values</span>[0] = <span style="color: #2aa198;">"xom"</span>
-data.columns.<span style="color: #268bd2;">values</span>[1] = <span style="color: #2aa198;">"spy"</span>
+<span style="color: #fd971f;">data</span> = pd.DataFrame(pd.concat([xom_returns, spy_returns], axis = 1))
+data.columns.<span style="color: #fd971f;">values</span>[0] = <span style="color: #e2c770;">"xom"</span>
+data.columns.<span style="color: #fd971f;">values</span>[1] = <span style="color: #e2c770;">"spy"</span>
 
-<span style="color: #268bd2;">beta_reg</span> = sm.ols(formula=<span style="color: #2aa198;">"xom ~ spy"</span>, data=data).fit()
+<span style="color: #fd971f;">beta_reg</span> = sm.ols(formula=<span style="color: #e2c770;">"xom ~ spy"</span>, data=data).fit()
 beta_reg.params[1]
 </pre>
 </div>
@@ -372,22 +395,22 @@ beta_reg.params[1]
 
 
 <p>
-So XOM's beta coefficient over the last year is <code>0.36</code>.
+So XOM's beta coefficient over the last year is <code>0.75</code>.
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org5b8bf4b" class="outline-2">
-<h2 id="org5b8bf4b"><span class="section-number-2">6.</span> Optional: A CAPM video appropriate to an Intro to Finance Course</h2>
+<div id="outline-container-orge980414" class="outline-2">
+<h2 id="orge980414"><span class="section-number-2">6.</span> Optional: A CAPM video appropriate to an Intro to Finance Course</h2>
 <div class="outline-text-2" id="text-6">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5vQL-50itig" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 </div>
 
 
-<div id="outline-container-orgde76e9d" class="outline-2">
-<h2 id="orgde76e9d"><span class="section-number-2">7.</span> Optional: A slightly more advanced treatment of the CAPM</h2>
+<div id="outline-container-org928f41c" class="outline-2">
+<h2 id="org928f41c"><span class="section-number-2">7.</span> Optional: A slightly more advanced treatment of the CAPM</h2>
 <div class="outline-text-2" id="text-7">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/coJl_aCBTuA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
@@ -395,7 +418,7 @@ So XOM's beta coefficient over the last year is <code>0.36</code>.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Matt Brigida, Ph.D.</p>
-<p class="date">Created: 2024-04-02 Tue 22:03</p>
+<p class="date">Created: 2024-06-17 Mon 21:29</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
